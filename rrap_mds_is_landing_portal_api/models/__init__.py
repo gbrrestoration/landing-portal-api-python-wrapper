@@ -1,0 +1,31 @@
+# flake8: noqa
+
+# import all models into this package
+# if you have many models here with many references from one model to another this may
+# raise a RecursionError
+# to avoid this, import only the models that you directly need like:
+# from from rrap_mds_is_landing_portal_api.model.pet import Pet
+# or import this package, but before doing it, use:
+# import sys
+# sys.setrecursionlimit(n)
+
+from rrap_mds_is_landing_portal_api.model.access_level import AccessLevel
+from rrap_mds_is_landing_portal_api.model.access_report import AccessReport
+from rrap_mds_is_landing_portal_api.model.access_report_response import AccessReportResponse
+from rrap_mds_is_landing_portal_api.model.access_request_list import AccessRequestList
+from rrap_mds_is_landing_portal_api.model.access_request_response import AccessRequestResponse
+from rrap_mds_is_landing_portal_api.model.access_request_status_change import AccessRequestStatusChange
+from rrap_mds_is_landing_portal_api.model.change_state_status import ChangeStateStatus
+from rrap_mds_is_landing_portal_api.model.component_name import ComponentName
+from rrap_mds_is_landing_portal_api.model.delete_access_request import DeleteAccessRequest
+from rrap_mds_is_landing_portal_api.model.http_validation_error import HTTPValidationError
+from rrap_mds_is_landing_portal_api.model.intended_user_type import IntendedUserType
+from rrap_mds_is_landing_portal_api.model.location_inner import LocationInner
+from rrap_mds_is_landing_portal_api.model.report_authorisation_component import ReportAuthorisationComponent
+from rrap_mds_is_landing_portal_api.model.report_component_role import ReportComponentRole
+from rrap_mds_is_landing_portal_api.model.request_access_table_item import RequestAccessTableItem
+from rrap_mds_is_landing_portal_api.model.request_add_note import RequestAddNote
+from rrap_mds_is_landing_portal_api.model.request_status import RequestStatus
+from rrap_mds_is_landing_portal_api.model.status import Status
+from rrap_mds_is_landing_portal_api.model.user import User
+from rrap_mds_is_landing_portal_api.model.validation_error import ValidationError
