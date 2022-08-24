@@ -39,14 +39,14 @@ class UserAccessControlApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.generate_access_report_access_control_user_generate_access_report_get_endpoint = _Endpoint(
+        self.generate_access_report_endpoint = _Endpoint(
             settings={
                 'response_type': (AccessReportResponse,),
                 'auth': [
                     'OAuth2PasswordBearer'
                 ],
                 'endpoint_path': '/access-control/user/generate-access-report',
-                'operation_id': 'generate_access_report_access_control_user_generate_access_report_get',
+                'operation_id': 'generate_access_report',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -83,58 +83,14 @@ class UserAccessControlApi(object):
             },
             api_client=api_client
         )
-        self.get_full_user_request_history_access_control_user_request_history_get_endpoint = _Endpoint(
-            settings={
-                'response_type': (AccessRequestList,),
-                'auth': [
-                    'OAuth2PasswordBearer'
-                ],
-                'endpoint_path': '/access-control/user/request-history',
-                'operation_id': 'get_full_user_request_history_access_control_user_request_history_get',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_pending_access_requests_access_control_user_pending_request_history_get_endpoint = _Endpoint(
+        self.get_pending_requests_endpoint = _Endpoint(
             settings={
                 'response_type': (AccessRequestList,),
                 'auth': [
                     'OAuth2PasswordBearer'
                 ],
                 'endpoint_path': '/access-control/user/pending-request-history',
-                'operation_id': 'get_pending_access_requests_access_control_user_pending_request_history_get',
+                'operation_id': 'get_pending_requests',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -171,14 +127,58 @@ class UserAccessControlApi(object):
             },
             api_client=api_client
         )
-        self.request_access_change_access_control_user_request_change_post_endpoint = _Endpoint(
+        self.get_requests_endpoint = _Endpoint(
+            settings={
+                'response_type': (AccessRequestList,),
+                'auth': [
+                    'OAuth2PasswordBearer'
+                ],
+                'endpoint_path': '/access-control/user/request-history',
+                'operation_id': 'get_requests',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.request_access_change_endpoint = _Endpoint(
             settings={
                 'response_type': (AccessRequestResponse,),
                 'auth': [
                     'OAuth2PasswordBearer'
                 ],
                 'endpoint_path': '/access-control/user/request-change',
-                'operation_id': 'request_access_change_access_control_user_request_change_post',
+                'operation_id': 'request_access_change',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -229,7 +229,7 @@ class UserAccessControlApi(object):
             api_client=api_client
         )
 
-    def generate_access_report_access_control_user_generate_access_report_get(
+    def generate_access_report(
         self,
         **kwargs
     ):
@@ -239,7 +239,7 @@ class UserAccessControlApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.generate_access_report_access_control_user_generate_access_report_get(async_req=True)
+        >>> thread = api.generate_access_report(async_req=True)
         >>> result = thread.get()
 
 
@@ -305,87 +305,9 @@ class UserAccessControlApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.generate_access_report_access_control_user_generate_access_report_get_endpoint.call_with_http_info(**kwargs)
+        return self.generate_access_report_endpoint.call_with_http_info(**kwargs)
 
-    def get_full_user_request_history_access_control_user_request_history_get(
-        self,
-        **kwargs
-    ):
-        """Get Full User Request History  # noqa: E501
-
-        get_full_user_request_history For the current logged in user retrieves all of the entries in the  access request table. Note that the item format is directly mappable to the dynamodb entry.  Arguments ----------  Returns -------  : AccessRequestList     A list of access request entries in the table  See Also (optional) --------  Examples (optional) --------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_full_user_request_history_access_control_user_request_history_get(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            AccessRequestList
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.get_full_user_request_history_access_control_user_request_history_get_endpoint.call_with_http_info(**kwargs)
-
-    def get_pending_access_requests_access_control_user_pending_request_history_get(
+    def get_pending_requests(
         self,
         **kwargs
     ):
@@ -395,7 +317,7 @@ class UserAccessControlApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_pending_access_requests_access_control_user_pending_request_history_get(async_req=True)
+        >>> thread = api.get_pending_requests(async_req=True)
         >>> result = thread.get()
 
 
@@ -461,9 +383,87 @@ class UserAccessControlApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.get_pending_access_requests_access_control_user_pending_request_history_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_pending_requests_endpoint.call_with_http_info(**kwargs)
 
-    def request_access_change_access_control_user_request_change_post(
+    def get_requests(
+        self,
+        **kwargs
+    ):
+        """Get Full User Request History  # noqa: E501
+
+        get_full_user_request_history For the current logged in user retrieves all of the entries in the  access request table. Note that the item format is directly mappable to the dynamodb entry.  Arguments ----------  Returns -------  : AccessRequestList     A list of access request entries in the table  See Also (optional) --------  Examples (optional) --------  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_requests(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            AccessRequestList
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        return self.get_requests_endpoint.call_with_http_info(**kwargs)
+
+    def request_access_change(
         self,
         access_report,
         **kwargs
@@ -474,7 +474,7 @@ class UserAccessControlApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.request_access_change_access_control_user_request_change_post(access_report, async_req=True)
+        >>> thread = api.request_access_change(access_report, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -545,5 +545,5 @@ class UserAccessControlApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['access_report'] = \
             access_report
-        return self.request_access_change_access_control_user_request_change_post_endpoint.call_with_http_info(**kwargs)
+        return self.request_access_change_endpoint.call_with_http_info(**kwargs)
 

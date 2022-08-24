@@ -23,50 +23,50 @@ class TestAdminAccessControlApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_add_note_access_control_admin_add_note_post(self):
-        """Test case for add_note_access_control_admin_add_note_post
+    def test_add_note(self):
+        """Test case for add_note
 
         Add Note  # noqa: E501
         """
         pass
 
-    def test_all_pending_request_history_access_control_admin_all_pending_request_history_get(self):
-        """Test case for all_pending_request_history_access_control_admin_all_pending_request_history_get
-
-        All Pending Request History  # noqa: E501
-        """
-        pass
-
-    def test_all_request_history_access_control_admin_all_request_history_get(self):
-        """Test case for all_request_history_access_control_admin_all_request_history_get
-
-        All Request History  # noqa: E501
-        """
-        pass
-
-    def test_change_request_state_access_control_admin_change_request_state_post(self):
-        """Test case for change_request_state_access_control_admin_change_request_state_post
+    def test_change_request_state(self):
+        """Test case for change_request_state
 
         Change Request State  # noqa: E501
         """
         pass
 
-    def test_do_delete_request_access_control_admin_delete_request_post(self):
-        """Test case for do_delete_request_access_control_admin_delete_request_post
+    def test_delete_request(self):
+        """Test case for delete_request
 
         Do Delete Request  # noqa: E501
         """
         pass
 
-    def test_user_pending_request_history_access_control_admin_user_pending_request_history_get(self):
-        """Test case for user_pending_request_history_access_control_admin_user_pending_request_history_get
+    def test_get_all_pending_requests(self):
+        """Test case for get_all_pending_requests
+
+        All Pending Request History  # noqa: E501
+        """
+        pass
+
+    def test_get_all_pending_requests_for_user(self):
+        """Test case for get_all_pending_requests_for_user
 
         User Pending Request History  # noqa: E501
         """
         pass
 
-    def test_user_request_history_access_control_admin_user_request_history_get(self):
-        """Test case for user_request_history_access_control_admin_user_request_history_get
+    def test_get_all_requests(self):
+        """Test case for get_all_requests
+
+        All Request History  # noqa: E501
+        """
+        pass
+
+    def test_get_all_requests_for_user(self):
+        """Test case for get_all_requests_for_user
 
         User Request History  # noqa: E501
         """

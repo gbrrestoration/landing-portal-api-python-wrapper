@@ -77,10 +77,10 @@ with rrap_mds_is_landing_portal_api.ApiClient(configuration) as api_client:
 
     try:
         # Check General Access
-        api_response = api_instance.check_general_access_check_access_general_get()
+        api_response = api_instance.check_general_access()
         pprint(api_response)
     except rrap_mds_is_landing_portal_api.ApiException as e:
-        print("Exception when calling AccessCheckApi->check_general_access_check_access_general_get: %s\n" % e)
+        print("Exception when calling AccessCheckApi->check_general_access: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -89,20 +89,20 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccessCheckApi* | [**check_general_access_check_access_general_get**](docs/AccessCheckApi.md#check_general_access_check_access_general_get) | **GET** /check-access/general | Check General Access
-*AccessCheckApi* | [**check_public_access_check_access_public_get**](docs/AccessCheckApi.md#check_public_access_check_access_public_get) | **GET** /check-access/public | Check Public Access
-*AdminAccessControlApi* | [**add_note_access_control_admin_add_note_post**](docs/AdminAccessControlApi.md#add_note_access_control_admin_add_note_post) | **POST** /access-control/admin/add-note | Add Note
-*AdminAccessControlApi* | [**all_pending_request_history_access_control_admin_all_pending_request_history_get**](docs/AdminAccessControlApi.md#all_pending_request_history_access_control_admin_all_pending_request_history_get) | **GET** /access-control/admin/all-pending-request-history | All Pending Request History
-*AdminAccessControlApi* | [**all_request_history_access_control_admin_all_request_history_get**](docs/AdminAccessControlApi.md#all_request_history_access_control_admin_all_request_history_get) | **GET** /access-control/admin/all-request-history | All Request History
-*AdminAccessControlApi* | [**change_request_state_access_control_admin_change_request_state_post**](docs/AdminAccessControlApi.md#change_request_state_access_control_admin_change_request_state_post) | **POST** /access-control/admin/change-request-state | Change Request State
-*AdminAccessControlApi* | [**do_delete_request_access_control_admin_delete_request_post**](docs/AdminAccessControlApi.md#do_delete_request_access_control_admin_delete_request_post) | **POST** /access-control/admin/delete-request | Do Delete Request
-*AdminAccessControlApi* | [**user_pending_request_history_access_control_admin_user_pending_request_history_get**](docs/AdminAccessControlApi.md#user_pending_request_history_access_control_admin_user_pending_request_history_get) | **GET** /access-control/admin/user-pending-request-history | User Pending Request History
-*AdminAccessControlApi* | [**user_request_history_access_control_admin_user_request_history_get**](docs/AdminAccessControlApi.md#user_request_history_access_control_admin_user_request_history_get) | **GET** /access-control/admin/user-request-history | User Request History
-*UserAccessControlApi* | [**generate_access_report_access_control_user_generate_access_report_get**](docs/UserAccessControlApi.md#generate_access_report_access_control_user_generate_access_report_get) | **GET** /access-control/user/generate-access-report | Generate Access Report
-*UserAccessControlApi* | [**get_full_user_request_history_access_control_user_request_history_get**](docs/UserAccessControlApi.md#get_full_user_request_history_access_control_user_request_history_get) | **GET** /access-control/user/request-history | Get Full User Request History
-*UserAccessControlApi* | [**get_pending_access_requests_access_control_user_pending_request_history_get**](docs/UserAccessControlApi.md#get_pending_access_requests_access_control_user_pending_request_history_get) | **GET** /access-control/user/pending-request-history | Get Pending Access Requests
-*UserAccessControlApi* | [**request_access_change_access_control_user_request_change_post**](docs/UserAccessControlApi.md#request_access_change_access_control_user_request_change_post) | **POST** /access-control/user/request-change | Request Access Change
-*DefaultApi* | [**root_get**](docs/DefaultApi.md#root_get) | **GET** / | Root
+*AccessCheckApi* | [**check_general_access**](docs/AccessCheckApi.md#check_general_access) | **GET** /check-access/general | Check General Access
+*AccessCheckApi* | [**check_public_access**](docs/AccessCheckApi.md#check_public_access) | **GET** /check-access/public | Check Public Access
+*AdminAccessControlApi* | [**add_note**](docs/AdminAccessControlApi.md#add_note) | **POST** /access-control/admin/add-note | Add Note
+*AdminAccessControlApi* | [**change_request_state**](docs/AdminAccessControlApi.md#change_request_state) | **POST** /access-control/admin/change-request-state | Change Request State
+*AdminAccessControlApi* | [**delete_request**](docs/AdminAccessControlApi.md#delete_request) | **POST** /access-control/admin/delete-request | Do Delete Request
+*AdminAccessControlApi* | [**get_all_pending_requests**](docs/AdminAccessControlApi.md#get_all_pending_requests) | **GET** /access-control/admin/all-pending-request-history | All Pending Request History
+*AdminAccessControlApi* | [**get_all_pending_requests_for_user**](docs/AdminAccessControlApi.md#get_all_pending_requests_for_user) | **GET** /access-control/admin/user-pending-request-history | User Pending Request History
+*AdminAccessControlApi* | [**get_all_requests**](docs/AdminAccessControlApi.md#get_all_requests) | **GET** /access-control/admin/all-request-history | All Request History
+*AdminAccessControlApi* | [**get_all_requests_for_user**](docs/AdminAccessControlApi.md#get_all_requests_for_user) | **GET** /access-control/admin/user-request-history | User Request History
+*UserAccessControlApi* | [**generate_access_report**](docs/UserAccessControlApi.md#generate_access_report) | **GET** /access-control/user/generate-access-report | Generate Access Report
+*UserAccessControlApi* | [**get_pending_requests**](docs/UserAccessControlApi.md#get_pending_requests) | **GET** /access-control/user/pending-request-history | Get Pending Access Requests
+*UserAccessControlApi* | [**get_requests**](docs/UserAccessControlApi.md#get_requests) | **GET** /access-control/user/request-history | Get Full User Request History
+*UserAccessControlApi* | [**request_access_change**](docs/UserAccessControlApi.md#request_access_change) | **POST** /access-control/user/request-change | Request Access Change
+*DefaultApi* | [**root**](docs/DefaultApi.md#root) | **GET** / | Root
 
 
 ## Documentation For Models

@@ -36,14 +36,14 @@ class AccessCheckApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.check_general_access_check_access_general_get_endpoint = _Endpoint(
+        self.check_general_access_endpoint = _Endpoint(
             settings={
                 'response_type': (User,),
                 'auth': [
                     'OAuth2PasswordBearer'
                 ],
                 'endpoint_path': '/check-access/general',
-                'operation_id': 'check_general_access_check_access_general_get',
+                'operation_id': 'check_general_access',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -80,12 +80,12 @@ class AccessCheckApi(object):
             },
             api_client=api_client
         )
-        self.check_public_access_check_access_public_get_endpoint = _Endpoint(
+        self.check_public_access_endpoint = _Endpoint(
             settings={
                 'response_type': (Status,),
                 'auth': [],
                 'endpoint_path': '/check-access/public',
-                'operation_id': 'check_public_access_check_access_public_get',
+                'operation_id': 'check_public_access',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -123,7 +123,7 @@ class AccessCheckApi(object):
             api_client=api_client
         )
 
-    def check_general_access_check_access_general_get(
+    def check_general_access(
         self,
         **kwargs
     ):
@@ -133,7 +133,7 @@ class AccessCheckApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.check_general_access_check_access_general_get(async_req=True)
+        >>> thread = api.check_general_access(async_req=True)
         >>> result = thread.get()
 
 
@@ -199,9 +199,9 @@ class AccessCheckApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.check_general_access_check_access_general_get_endpoint.call_with_http_info(**kwargs)
+        return self.check_general_access_endpoint.call_with_http_info(**kwargs)
 
-    def check_public_access_check_access_public_get(
+    def check_public_access(
         self,
         **kwargs
     ):
@@ -211,7 +211,7 @@ class AccessCheckApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.check_public_access_check_access_public_get(async_req=True)
+        >>> thread = api.check_public_access(async_req=True)
         >>> result = thread.get()
 
 
@@ -277,5 +277,5 @@ class AccessCheckApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.check_public_access_check_access_public_get_endpoint.call_with_http_info(**kwargs)
+        return self.check_public_access_endpoint.call_with_http_info(**kwargs)
 
