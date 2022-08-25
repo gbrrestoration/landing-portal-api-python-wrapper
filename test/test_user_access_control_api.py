@@ -23,29 +23,29 @@ class TestUserAccessControlApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_generate_access_report_access_control_user_generate_access_report_get(self):
-        """Test case for generate_access_report_access_control_user_generate_access_report_get
+    def test_generate_access_report(self):
+        """Test case for generate_access_report
 
         Generate Access Report  # noqa: E501
         """
         pass
 
-    def test_get_full_user_request_history_access_control_user_request_history_get(self):
-        """Test case for get_full_user_request_history_access_control_user_request_history_get
-
-        Get Full User Request History  # noqa: E501
-        """
-        pass
-
-    def test_get_pending_access_requests_access_control_user_pending_request_history_get(self):
-        """Test case for get_pending_access_requests_access_control_user_pending_request_history_get
+    def test_get_pending_requests(self):
+        """Test case for get_pending_requests
 
         Get Pending Access Requests  # noqa: E501
         """
         pass
 
-    def test_request_access_change_access_control_user_request_change_post(self):
-        """Test case for request_access_change_access_control_user_request_change_post
+    def test_get_requests(self):
+        """Test case for get_requests
+
+        Get Full User Request History  # noqa: E501
+        """
+        pass
+
+    def test_request_access_change(self):
+        """Test case for request_access_change
 
         Request Access Change  # noqa: E501
         """

@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_note_access_control_admin_add_note_post**](AdminAccessControlApi.md#add_note_access_control_admin_add_note_post) | **POST** /access-control/admin/add-note | Add Note
-[**all_pending_request_history_access_control_admin_all_pending_request_history_get**](AdminAccessControlApi.md#all_pending_request_history_access_control_admin_all_pending_request_history_get) | **GET** /access-control/admin/all-pending-request-history | All Pending Request History
-[**all_request_history_access_control_admin_all_request_history_get**](AdminAccessControlApi.md#all_request_history_access_control_admin_all_request_history_get) | **GET** /access-control/admin/all-request-history | All Request History
-[**change_request_state_access_control_admin_change_request_state_post**](AdminAccessControlApi.md#change_request_state_access_control_admin_change_request_state_post) | **POST** /access-control/admin/change-request-state | Change Request State
-[**do_delete_request_access_control_admin_delete_request_post**](AdminAccessControlApi.md#do_delete_request_access_control_admin_delete_request_post) | **POST** /access-control/admin/delete-request | Do Delete Request
-[**user_pending_request_history_access_control_admin_user_pending_request_history_get**](AdminAccessControlApi.md#user_pending_request_history_access_control_admin_user_pending_request_history_get) | **GET** /access-control/admin/user-pending-request-history | User Pending Request History
-[**user_request_history_access_control_admin_user_request_history_get**](AdminAccessControlApi.md#user_request_history_access_control_admin_user_request_history_get) | **GET** /access-control/admin/user-request-history | User Request History
+[**add_note**](AdminAccessControlApi.md#add_note) | **POST** /access-control/admin/add-note | Add Note
+[**change_request_state**](AdminAccessControlApi.md#change_request_state) | **POST** /access-control/admin/change-request-state | Change Request State
+[**delete_request**](AdminAccessControlApi.md#delete_request) | **POST** /access-control/admin/delete-request | Do Delete Request
+[**get_all_pending_requests**](AdminAccessControlApi.md#get_all_pending_requests) | **GET** /access-control/admin/all-pending-request-history | All Pending Request History
+[**get_all_pending_requests_for_user**](AdminAccessControlApi.md#get_all_pending_requests_for_user) | **GET** /access-control/admin/user-pending-request-history | User Pending Request History
+[**get_all_requests**](AdminAccessControlApi.md#get_all_requests) | **GET** /access-control/admin/all-request-history | All Request History
+[**get_all_requests_for_user**](AdminAccessControlApi.md#get_all_requests_for_user) | **GET** /access-control/admin/user-request-history | User Request History
 
 
-# **add_note_access_control_admin_add_note_post**
-> Status add_note_access_control_admin_add_note_post(request_add_note)
+# **add_note**
+> Status add_note(request_add_note)
 
 Add Note
 
@@ -60,10 +60,10 @@ with rrap_mds_is_landing_portal_api.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Add Note
-        api_response = api_instance.add_note_access_control_admin_add_note_post(request_add_note)
+        api_response = api_instance.add_note(request_add_note)
         pprint(api_response)
     except rrap_mds_is_landing_portal_api.ApiException as e:
-        print("Exception when calling AdminAccessControlApi->add_note_access_control_admin_add_note_post: %s\n" % e)
+        print("Exception when calling AdminAccessControlApi->add_note: %s\n" % e)
 ```
 
 
@@ -96,156 +96,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **all_pending_request_history_access_control_admin_all_pending_request_history_get**
-> AccessRequestList all_pending_request_history_access_control_admin_all_pending_request_history_get()
-
-All Pending Request History
-
-all_pending_request_history Given admin read permissions, pulls all entries in the access request table.  Arguments ----------  Returns -------  : AccessRequestList     list of access request items  See Also (optional) --------  Examples (optional) --------
-
-### Example
-
-* OAuth Authentication (OAuth2PasswordBearer):
-
-```python
-import time
-import rrap_mds_is_landing_portal_api
-from rrap_mds_is_landing_portal_api.api import admin_access_control_api
-from rrap_mds_is_landing_portal_api.model.access_request_list import AccessRequestList
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = rrap_mds_is_landing_portal_api.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
-configuration = rrap_mds_is_landing_portal_api.Configuration(
-    host = "http://localhost"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with rrap_mds_is_landing_portal_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = admin_access_control_api.AdminAccessControlApi(api_client)
-
-    # example, this endpoint has no required or optional parameters
-    try:
-        # All Pending Request History
-        api_response = api_instance.all_pending_request_history_access_control_admin_all_pending_request_history_get()
-        pprint(api_response)
-    except rrap_mds_is_landing_portal_api.ApiException as e:
-        print("Exception when calling AdminAccessControlApi->all_pending_request_history_access_control_admin_all_pending_request_history_get: %s\n" % e)
-```
-
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**AccessRequestList**](AccessRequestList.md)
-
-### Authorization
-
-[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **all_request_history_access_control_admin_all_request_history_get**
-> AccessRequestList all_request_history_access_control_admin_all_request_history_get()
-
-All Request History
-
-all_request_history Given admin read permissions, pulls all entries in the access request table.  Arguments ----------  Returns -------  : AccessRequestList     list of access request items  See Also (optional) --------  Examples (optional) --------
-
-### Example
-
-* OAuth Authentication (OAuth2PasswordBearer):
-
-```python
-import time
-import rrap_mds_is_landing_portal_api
-from rrap_mds_is_landing_portal_api.api import admin_access_control_api
-from rrap_mds_is_landing_portal_api.model.access_request_list import AccessRequestList
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = rrap_mds_is_landing_portal_api.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
-configuration = rrap_mds_is_landing_portal_api.Configuration(
-    host = "http://localhost"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with rrap_mds_is_landing_portal_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = admin_access_control_api.AdminAccessControlApi(api_client)
-
-    # example, this endpoint has no required or optional parameters
-    try:
-        # All Request History
-        api_response = api_instance.all_request_history_access_control_admin_all_request_history_get()
-        pprint(api_response)
-    except rrap_mds_is_landing_portal_api.ApiException as e:
-        print("Exception when calling AdminAccessControlApi->all_request_history_access_control_admin_all_request_history_get: %s\n" % e)
-```
-
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**AccessRequestList**](AccessRequestList.md)
-
-### Authorization
-
-[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **change_request_state_access_control_admin_change_request_state_post**
-> ChangeStateStatus change_request_state_access_control_admin_change_request_state_post(access_request_status_change)
+# **change_request_state**
+> ChangeStateStatus change_request_state(access_request_status_change)
 
 Change Request State
 
@@ -295,19 +147,19 @@ with rrap_mds_is_landing_portal_api.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Change Request State
-        api_response = api_instance.change_request_state_access_control_admin_change_request_state_post(access_request_status_change)
+        api_response = api_instance.change_request_state(access_request_status_change)
         pprint(api_response)
     except rrap_mds_is_landing_portal_api.ApiException as e:
-        print("Exception when calling AdminAccessControlApi->change_request_state_access_control_admin_change_request_state_post: %s\n" % e)
+        print("Exception when calling AdminAccessControlApi->change_request_state: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Change Request State
-        api_response = api_instance.change_request_state_access_control_admin_change_request_state_post(access_request_status_change, send_email_alert=send_email_alert)
+        api_response = api_instance.change_request_state(access_request_status_change, send_email_alert=send_email_alert)
         pprint(api_response)
     except rrap_mds_is_landing_portal_api.ApiException as e:
-        print("Exception when calling AdminAccessControlApi->change_request_state_access_control_admin_change_request_state_post: %s\n" % e)
+        print("Exception when calling AdminAccessControlApi->change_request_state: %s\n" % e)
 ```
 
 
@@ -341,8 +193,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **do_delete_request_access_control_admin_delete_request_post**
-> Status do_delete_request_access_control_admin_delete_request_post(delete_access_request)
+# **delete_request**
+> Status delete_request(delete_access_request)
 
 Do Delete Request
 
@@ -389,10 +241,10 @@ with rrap_mds_is_landing_portal_api.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Do Delete Request
-        api_response = api_instance.do_delete_request_access_control_admin_delete_request_post(delete_access_request)
+        api_response = api_instance.delete_request(delete_access_request)
         pprint(api_response)
     except rrap_mds_is_landing_portal_api.ApiException as e:
-        print("Exception when calling AdminAccessControlApi->do_delete_request_access_control_admin_delete_request_post: %s\n" % e)
+        print("Exception when calling AdminAccessControlApi->delete_request: %s\n" % e)
 ```
 
 
@@ -425,8 +277,82 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **user_pending_request_history_access_control_admin_user_pending_request_history_get**
-> AccessRequestList user_pending_request_history_access_control_admin_user_pending_request_history_get(username)
+# **get_all_pending_requests**
+> AccessRequestList get_all_pending_requests()
+
+All Pending Request History
+
+all_pending_request_history Given admin read permissions, pulls all entries in the access request table.  Arguments ----------  Returns -------  : AccessRequestList     list of access request items  See Also (optional) --------  Examples (optional) --------
+
+### Example
+
+* OAuth Authentication (OAuth2PasswordBearer):
+
+```python
+import time
+import rrap_mds_is_landing_portal_api
+from rrap_mds_is_landing_portal_api.api import admin_access_control_api
+from rrap_mds_is_landing_portal_api.model.access_request_list import AccessRequestList
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = rrap_mds_is_landing_portal_api.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = rrap_mds_is_landing_portal_api.Configuration(
+    host = "http://localhost"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with rrap_mds_is_landing_portal_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = admin_access_control_api.AdminAccessControlApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
+    try:
+        # All Pending Request History
+        api_response = api_instance.get_all_pending_requests()
+        pprint(api_response)
+    except rrap_mds_is_landing_portal_api.ApiException as e:
+        print("Exception when calling AdminAccessControlApi->get_all_pending_requests: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**AccessRequestList**](AccessRequestList.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_pending_requests_for_user**
+> AccessRequestList get_all_pending_requests_for_user(username)
 
 User Pending Request History
 
@@ -469,10 +395,10 @@ with rrap_mds_is_landing_portal_api.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # User Pending Request History
-        api_response = api_instance.user_pending_request_history_access_control_admin_user_pending_request_history_get(username)
+        api_response = api_instance.get_all_pending_requests_for_user(username)
         pprint(api_response)
     except rrap_mds_is_landing_portal_api.ApiException as e:
-        print("Exception when calling AdminAccessControlApi->user_pending_request_history_access_control_admin_user_pending_request_history_get: %s\n" % e)
+        print("Exception when calling AdminAccessControlApi->get_all_pending_requests_for_user: %s\n" % e)
 ```
 
 
@@ -505,8 +431,82 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **user_request_history_access_control_admin_user_request_history_get**
-> AccessRequestList user_request_history_access_control_admin_user_request_history_get(username)
+# **get_all_requests**
+> AccessRequestList get_all_requests()
+
+All Request History
+
+all_request_history Given admin read permissions, pulls all entries in the access request table.  Arguments ----------  Returns -------  : AccessRequestList     list of access request items  See Also (optional) --------  Examples (optional) --------
+
+### Example
+
+* OAuth Authentication (OAuth2PasswordBearer):
+
+```python
+import time
+import rrap_mds_is_landing_portal_api
+from rrap_mds_is_landing_portal_api.api import admin_access_control_api
+from rrap_mds_is_landing_portal_api.model.access_request_list import AccessRequestList
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = rrap_mds_is_landing_portal_api.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = rrap_mds_is_landing_portal_api.Configuration(
+    host = "http://localhost"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with rrap_mds_is_landing_portal_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = admin_access_control_api.AdminAccessControlApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
+    try:
+        # All Request History
+        api_response = api_instance.get_all_requests()
+        pprint(api_response)
+    except rrap_mds_is_landing_portal_api.ApiException as e:
+        print("Exception when calling AdminAccessControlApi->get_all_requests: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**AccessRequestList**](AccessRequestList.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_requests_for_user**
+> AccessRequestList get_all_requests_for_user(username)
 
 User Request History
 
@@ -549,10 +549,10 @@ with rrap_mds_is_landing_portal_api.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # User Request History
-        api_response = api_instance.user_request_history_access_control_admin_user_request_history_get(username)
+        api_response = api_instance.get_all_requests_for_user(username)
         pprint(api_response)
     except rrap_mds_is_landing_portal_api.ApiException as e:
-        print("Exception when calling AdminAccessControlApi->user_request_history_access_control_admin_user_request_history_get: %s\n" % e)
+        print("Exception when calling AdminAccessControlApi->get_all_requests_for_user: %s\n" % e)
 ```
 
 

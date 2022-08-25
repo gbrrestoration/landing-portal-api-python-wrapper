@@ -23,15 +23,15 @@ class TestAccessCheckApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_check_general_access_check_access_general_get(self):
-        """Test case for check_general_access_check_access_general_get
+    def test_check_general_access(self):
+        """Test case for check_general_access
 
         Check General Access  # noqa: E501
         """
         pass
 
-    def test_check_public_access_check_access_public_get(self):
-        """Test case for check_public_access_check_access_public_get
+    def test_check_public_access(self):
+        """Test case for check_public_access
 
         Check Public Access  # noqa: E501
         """

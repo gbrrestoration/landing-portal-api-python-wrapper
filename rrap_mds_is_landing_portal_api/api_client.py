@@ -802,10 +802,10 @@ class Endpoint(object):
         Example:
 
         api_instance = AccessCheckApi()
-        api_instance.check_general_access_check_access_general_get  # this is an instance of the class Endpoint
-        api_instance.check_general_access_check_access_general_get()  # this invokes api_instance.check_general_access_check_access_general_get.__call__()
+        api_instance.check_general_access  # this is an instance of the class Endpoint
+        api_instance.check_general_access()  # this invokes api_instance.check_general_access.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.check_general_access_check_access_general_get.callable or self.callable in this class
+        api_instance.check_general_access.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

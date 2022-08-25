@@ -4,12 +4,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check_general_access_check_access_general_get**](AccessCheckApi.md#check_general_access_check_access_general_get) | **GET** /check-access/general | Check General Access
-[**check_public_access_check_access_public_get**](AccessCheckApi.md#check_public_access_check_access_public_get) | **GET** /check-access/public | Check Public Access
+[**check_general_access**](AccessCheckApi.md#check_general_access) | **GET** /check-access/general | Check General Access
+[**check_public_access**](AccessCheckApi.md#check_public_access) | **GET** /check-access/public | Check Public Access
 
 
-# **check_general_access_check_access_general_get**
-> User check_general_access_check_access_general_get()
+# **check_general_access**
+> User check_general_access()
 
 Check General Access
 
@@ -50,10 +50,10 @@ with rrap_mds_is_landing_portal_api.ApiClient(configuration) as api_client:
     # example, this endpoint has no required or optional parameters
     try:
         # Check General Access
-        api_response = api_instance.check_general_access_check_access_general_get()
+        api_response = api_instance.check_general_access()
         pprint(api_response)
     except rrap_mds_is_landing_portal_api.ApiException as e:
-        print("Exception when calling AccessCheckApi->check_general_access_check_access_general_get: %s\n" % e)
+        print("Exception when calling AccessCheckApi->check_general_access: %s\n" % e)
 ```
 
 
@@ -82,8 +82,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **check_public_access_check_access_public_get**
-> Status check_public_access_check_access_public_get()
+# **check_public_access**
+> Status check_public_access()
 
 Check Public Access
 
@@ -113,10 +113,10 @@ with rrap_mds_is_landing_portal_api.ApiClient() as api_client:
     # example, this endpoint has no required or optional parameters
     try:
         # Check Public Access
-        api_response = api_instance.check_public_access_check_access_public_get()
+        api_response = api_instance.check_public_access()
         pprint(api_response)
     except rrap_mds_is_landing_portal_api.ApiException as e:
-        print("Exception when calling AccessCheckApi->check_public_access_check_access_public_get: %s\n" % e)
+        print("Exception when calling AccessCheckApi->check_public_access: %s\n" % e)
 ```
 
 
