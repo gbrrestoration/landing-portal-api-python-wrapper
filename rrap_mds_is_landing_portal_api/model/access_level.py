@@ -106,10 +106,10 @@ class AccessLevel(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): AccessLevel Describes the access level of a role e.g. read/write/admin., must be one of ["READ", "WRITE", "ADMIN", ]  # noqa: E501
+            args[0] (str):     AccessLevel         Describes the access level of a role e.g. read/write/admin     ., must be one of ["READ", "WRITE", "ADMIN", ]  # noqa: E501
 
         Keyword Args:
-            value (str): AccessLevel Describes the access level of a role e.g. read/write/admin., must be one of ["READ", "WRITE", "ADMIN", ]  # noqa: E501
+            value (str):     AccessLevel         Describes the access level of a role e.g. read/write/admin     ., must be one of ["READ", "WRITE", "ADMIN", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -200,10 +200,10 @@ class AccessLevel(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): AccessLevel Describes the access level of a role e.g. read/write/admin., must be one of ["READ", "WRITE", "ADMIN", ]  # noqa: E501
+            args[0] (str):     AccessLevel         Describes the access level of a role e.g. read/write/admin     ., must be one of ["READ", "WRITE", "ADMIN", ]  # noqa: E501
 
         Keyword Args:
-            value (str): AccessLevel Describes the access level of a role e.g. read/write/admin., must be one of ["READ", "WRITE", "ADMIN", ]  # noqa: E501
+            value (str):     AccessLevel         Describes the access level of a role e.g. read/write/admin     ., must be one of ["READ", "WRITE", "ADMIN", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
